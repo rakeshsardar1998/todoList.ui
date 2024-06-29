@@ -1,0 +1,28 @@
+/* You can add global styles to this file, and also import other style files */
+/* toastr-custom.css */
+
+/* Example styles */
+.toast {
+    background-color: #333;
+    color: #fff;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 10px;
+    width: 300px; /* Adjust width as needed */
+}
+
+.toast-error {
+    background-color: #e74c3c;
+}
+
+.toast-success {
+    background-color: #2ecc71;
+}
+
+.toast-info {
+    background-color: #3498db;
+}
+
+.toast-warning {
+    background-color: #f39c12;
+}

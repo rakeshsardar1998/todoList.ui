@@ -1,0 +1,37 @@
+<!-- todo-list.component.html -->
+
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-header bg-primary text-white">
+      <h5 class="card-task">Todo List</h5>
+    </div>
+    <div class="card-body">
+      <!-- Todo Form -->
+      <form (ngSubmit)="addTodo()" class="mb-3">
+        <div class="form-row">
+          <div class="col">
+            <input type="text" class="form-control" placeholder="task" [(ngModel)]="newTodo.task" name="task" required>
+          </div>
+          <div class="col-auto">
+            <button type="submit" class="btn btn-primary">Add Todo</button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Todo List -->
+      <ul class="list-group">
+        <li class="list-group-item" *ngFor="let todo of todos">
+          <div class="d-flex justify-content-between align-items-center">
+            <div>
+              <input type="checkbox" class="form-check-input" [(ngModel)]="todo.isCompleted" (change)="updateTodo(todo)">
+              <span [class.completed]="todo.isCompleted">{{ todo.task }}</span>
+            </div>
+            <div>
+              <button class="btn btn-danger btn-sm" (click)="deleteTodo(todo.id)">Delete</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

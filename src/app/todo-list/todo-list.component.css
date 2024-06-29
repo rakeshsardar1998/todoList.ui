@@ -1,0 +1,4 @@
+/* src/app/todo-list/todo-list.component.css */
+.completed {
+  text-decoration: line-through;
+}
