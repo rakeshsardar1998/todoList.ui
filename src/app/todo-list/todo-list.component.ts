@@ -7,6 +7,7 @@ interface Todo {
   id?: number;
   task: string;
   isCompleted?: boolean;
+  isEditing?: boolean;
 }
 
 @Component({
@@ -46,6 +47,7 @@ export class TodoListComponent implements OnInit {
   }
 
   updateTodo(todo: Todo): void {
+    console.log(todo);
     if (todo.id !== undefined) {
       this.todoService.updateTodo(todo).subscribe(
         updatedTodo => {
@@ -73,6 +75,18 @@ export class TodoListComponent implements OnInit {
           this.todoService.toastAlertError('Failed to delete todo');
         }
       );
+    }
+  }
+
+
+  edit(todo: Todo): void{
+    todo.isEditing = !todo.isEditing;
+  }
+
+  save(todo: Todo): void {
+    if(todo.id !== undefined){
+      this.updateTodo(todo);
+      todo.isEditing = false;
     }
   }
 }

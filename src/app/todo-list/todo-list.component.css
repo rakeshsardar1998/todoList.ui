@@ -13,8 +13,6 @@
   margin-left: 10px;
 }
 
-/* Removed the .completed class */
-
 .checkmark-container {
   display: flex;
   align-items: center;
